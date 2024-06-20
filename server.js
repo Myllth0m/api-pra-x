@@ -3,6 +3,7 @@ import express from 'express'
 
 const prisma = new PrismaClient()
 const app = express()
+const port = process.env.PORT || 3000
 
 app.use(express.json())
 
@@ -68,4 +69,4 @@ app.delete('/users/:id', async (req, res) => {
   res.status(200).json({ message: 'User deleted successfully!' })
 })
 
-app.listen(3000)
+app.listen(port)
